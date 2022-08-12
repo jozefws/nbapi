@@ -5,9 +5,10 @@
     if(!isset($_SESSION)){ 
         session_start(); 
     }
-    require constants.php;
+    include "constants.php";
 
     function endpointReq($endpoint, $auth){
+        include "constants.php";
         $url =  $BASE_URL."/".$endpoint;
         echo $url;
         $ch = curl_init($url);
@@ -35,6 +36,7 @@
     }
 
     function updateKeyExpiry($userID, $key, $keyID){
+        include "constants.php";
         $expiry = ((string)date("Y-m-d", strtotime(date("Y-m-d"). ' + 1 days'))) ."T". ((string)date("H:i:s")). "Z";
         $url =  $BASE_URL."/".$keyID."/";
         $ch = curl_init();
@@ -80,6 +82,7 @@
     }
 
     function deleteKey($keyid, $key){
+        include "constants.php";
         $url =  $BASE_URL."/".$keyid."/";
         $ch = curl_init();
         $headers = array(
@@ -114,6 +117,7 @@
     }
 
     function testAuth($userID, $key, $keyID){
+        include "constants.php";
         $url =  $BASE_URL."/users/tokens/";
         $ch = curl_init();
         $headers = array(
@@ -147,6 +151,7 @@
     }
 
     function addInterface($deviceSel, $interface_name, $interface_type, $key){
+        include "constants.php";
         $url =  $BASE_URL."/dcim/interfaces/";
         $ch = curl_init();
         $headers = array(

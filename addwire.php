@@ -6,8 +6,8 @@
     if(!isset($_SESSION)){ 
         session_start(); 
     } 
+    include "constants.php";
     require "netbox-api.php";
-    require "constants.php";
 
     if(isset($_SESSION['user_id'], $_SESSION['auth'], $_SESSION['key_id'])){
         $resp = testAuth($_SESSION['user_id'], $_SESSION['auth'], $_SESSION['key_id']);

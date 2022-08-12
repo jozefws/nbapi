@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 if(!isset($_SESSION)){ 
     session_start(); 
 } 
+include "constants.php";
 require "netbox-api.php";
 
 if(isset($_SESSION['user_id'], $_SESSION['auth'], $_SESSION['key_id'])){

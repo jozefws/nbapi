@@ -5,8 +5,8 @@ error_reporting(E_ALL);
 if(!isset($_SESSION)){ 
     session_start(); 
 } 
+include "constants.php";
 require "netbox-api.php";
-require "constants.php";
 if(isset($_POST["user-name"]) AND isset($_POST["user-pass"]) AND isset($_POST["login-submit"])){
         
     $user = $_POST["user-name"];
