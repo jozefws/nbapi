@@ -5,9 +5,10 @@
     if(!isset($_SESSION)){ 
         session_start(); 
     }
+    require constants.php;
 
     function endpointReq($endpoint, $auth){
-        $url = "https://precursor.cs.nott.ac.uk/netbox/api/".$endpoint;
+        $url =  $BASE_URL."/".$endpoint;
         echo $url;
         $ch = curl_init($url);
         $headers = array(
@@ -35,7 +36,7 @@
 
     function updateKeyExpiry($userID, $key, $keyID){
         $expiry = ((string)date("Y-m-d", strtotime(date("Y-m-d"). ' + 1 days'))) ."T". ((string)date("H:i:s")). "Z";
-        $url = "https://precursor.cs.nott.ac.uk/netbox/api/users/tokens/".$keyID."/";
+        $url =  $BASE_URL."/".$keyID."/";
         $ch = curl_init();
         $data = array(
             "user" => $userID,
@@ -79,7 +80,7 @@
     }
 
     function deleteKey($keyid, $key){
-        $url = "https://precursor.cs.nott.ac.uk/netbox/api/users/tokens/".$keyid."/";
+        $url =  $BASE_URL."/".$keyid."/";
         $ch = curl_init();
         $headers = array(
             'Authorization: Token '.$key,
@@ -113,7 +114,7 @@
     }
 
     function testAuth($userID, $key, $keyID){
-        $url = "https://precursor.cs.nott.ac.uk/netbox/api/users/tokens/";
+        $url =  $BASE_URL."/users/tokens/";
         $ch = curl_init();
         $headers = array(
             'Authorization: Token '.$key,
@@ -146,7 +147,7 @@
     }
 
     function addInterface($deviceSel, $interface_name, $interface_type, $key){
-        $url = "https://precursor.cs.nott.ac.uk/netbox/api/dcim/interfaces/";
+        $url =  $BASE_URL."/dcim/interfaces/";
         $ch = curl_init();
         $headers = array(
             'Authorization: Token '.$key,

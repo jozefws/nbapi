@@ -7,6 +7,7 @@
         session_start(); 
     } 
     require "netbox-api.php";
+    require "constants.php";
 
     if(isset($_SESSION['user_id'], $_SESSION['auth'], $_SESSION['key_id'])){
         $resp = testAuth($_SESSION['user_id'], $_SESSION['auth'], $_SESSION['key_id']);
@@ -42,7 +43,7 @@
         $interface_nameB = $_POST['interfaceSelB'];
 
 
-        $url = "https://precursor.cs.nott.ac.uk/netbox/api/dcim/cables/";
+        $url = $url."/dcim/cables/";
         $ch = curl_init();
         $headers = array(
             'Authorization: Token '.$key,

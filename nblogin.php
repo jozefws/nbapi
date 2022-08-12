@@ -6,6 +6,7 @@ if(!isset($_SESSION)){
     session_start(); 
 } 
 require "netbox-api.php";
+require "constants.php";
 if(isset($_POST["user-name"]) AND isset($_POST["user-pass"]) AND isset($_POST["login-submit"])){
         
     $user = $_POST["user-name"];
@@ -15,7 +16,7 @@ if(isset($_POST["user-name"]) AND isset($_POST["user-pass"]) AND isset($_POST["l
     }
     else{
 
-        $url = "https://precursor.cs.nott.ac.uk/netbox/api/users/tokens/provision/";
+        $url =  $BASE_URL."/users/tokens/provision/";
         $ch = curl_init();
         
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -49,7 +50,7 @@ if(isset($_POST["user-name"]) AND isset($_POST["user-pass"]) AND isset($_POST["l
                     echo '<meta http-equiv="refresh" content="0;URL= interface.php?error='.$jres['detail'].'"> ';
                 }else{
                     echo "Error";
-                   echo '<meta http-equiv="refresh" content="0;URL= interface.php?error=Unknown Error, try again or contact ps-cs-rst@nottingham.ac.uk"> ';
+                   echo '<meta http-equiv="refresh" content="0;URL= interface.php?error=Unknown Error, try again or contact '.$CONTACT_EMAIL.'"> ';
                 }
             }
         }
