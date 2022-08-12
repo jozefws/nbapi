@@ -1,0 +1,193 @@
+/*import reset.css*/
+@import url(reset.css);
+
+html, body{
+    height: 100%;
+    width: 100%;
+    background-color: #18194f;
+}
+
+h1, h2, h3, h4, p, a, li, ul, ol, form, input, textarea, button{
+    font-family: 'verdana', sans-serif;
+}
+
+h1{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    padding-top: 2em;
+}
+
+h2, #authsub{
+    font-size: 1.2em;
+    color: #fff;
+    text-align: center;
+    padding-top: 1em;
+}
+
+#auth-links{
+    height: auto;
+    width: auto;
+    text-align: center;
+    color: #fff;
+    margin-top: 2em;
+    padding: 1em;
+    line-height: 2em;
+    font-size: 1em;
+}
+
+a, a:visited{
+    
+    color: #fff;
+}
+ a:hover{
+    color: #2674c3;
+}
+
+
+
+.mainconn{
+    height: 100%;
+    width: 100%;
+}
+
+#add_form{
+    margin-top: 2em;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+}
+
+input, select{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: none;
+    background-color: #fff;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    min-width: 20em;
+    height: 3em;
+    padding-left: 0.5em;
+}
+
+.submit{
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    margin: 1.5em;
+    height: 3em;
+    opacity: .4;
+}
+
+.submit:hover{
+    cursor: pointer;
+    background-color: #2674c3;
+}
+
+
+#selCon{
+    display: block;
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin: auto;
+    line-height: 1.6em;
+}
+
+.selP{
+    color: white;
+    background-color: #003366;
+    text-align: center;
+    display: block;
+    float: left;
+    height: 2em;
+    width: 50%;
+    font-size: 0.8em;
+}
+
+.selP:hover{
+    background-color: #2674c3;
+    cursor: pointer;
+}
+
+#sideA{
+    width: 100%;
+}
+
+#sideB{
+    width: 100%;
+    display: none;
+}
+
+#qr-video{
+    width: 25%;
+    height: auto;
+    background-color: #18194f;
+}
+
+@media screen and (max-width: 500px){
+    #add_form{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #selCon{
+        height: 4em;
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        line-height: 3em;
+    }
+
+    
+    .selP{
+
+        text-align: center;
+        display: block;
+        float: left;
+        height: 3em;
+        width: 50%;
+        font-size: 1em;
+    }
+
+    
+    #sideA, #sideB{
+        margin-top: 3em;
+    }
+    h1{
+        font-size: 2em;;
+        padding-top: 1em;
+    }
+    
+    h2, #authsub{
+        font-size: 1.5em;
+        padding-top: 1em;
+    }
+    
+    #auth-links{
+        margin-top: 2em;
+        padding: 1em;
+        line-height: 3em;
+        font-size: 1.2em;
+    }
+    
+    input, select{
+        margin: 1em;
+        width: 80%;
+        height: 4em;
+        font-size: 1em;
+        padding-left: 1em;
+    }
+    
+    .submit{
+        font-size: 1em;
+        margin: 1.5em;
+        height: 4em;
+    }
+    
+  
+}
